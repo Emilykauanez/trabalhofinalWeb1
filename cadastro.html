@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: #fb51a6;  border-color:white">
+    <span class="navbar-brand mb-0 h1 text-white">BRILHART   Cadastro</span>
+    <a href="index.html" class="btn btn-primary" style="background-color: #fc6fb5; border-color: white;">Home</a>
+</nav>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-8 col-10" > <!-- Reduzir tamanho -->
+                <div class="card shadow-lg p-4" style="background-color: #f9b2d6;">
+                    <h3 class="text-center mb-4" style="color: white;">Cadastre-se no nosso site!</h3>
+                    <form id="cadastroForm">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="Digite seu telefone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" style="background-color: #fb51a6; border-color: #fb51a6;">Cadastrar</button>
+                    </form>
+                    <div id="mensagem" class="mt-3 text-center text-light fw-bold" style="display: none;">
+                        Cadastro realizado! Bem Vindo a BRILHART!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            
+            //Captura os valores dos campos
+            let nome = document.getElementById("nome").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let telefone = document.getElementById("telefone").value.trim();
+            let cep = document.getElementById("cep").value.trim();
+
+            // Verifica se todos os campos foram preenchidos
+            if (nome === "" || email === "" || telefone === "" || cep === "") {
+                alert("Preencha todos os campos antes de cadastrar.");
+                return;
+            }
+
+            // Exibe a mensagem de sucesso
+            document.getElementById("mensagem").style.display = "block";
+
+            // Opcional: Limpar os campos após o cadastro
+            document.getElementById("cadastroForm").reset();
+        });
+    </script>
+</body>  
+</body>  

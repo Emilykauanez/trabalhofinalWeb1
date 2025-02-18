@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seção Bases e Corretivos </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+<body>
+    <!-- Navbar com Ícones e Contador -->
+    <nav class="navbar text-light fixed-top" style="background-color: #f881bd;">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand text-light fw-bold" href="#"> BRILHART </a>
+            <div>
+                <div class="icon-container">
+                    <a href="sacola.html" class="text-light me-3">
+                        <i class="bi bi-bag-fill" style="font-size: 1.5rem;"></i>
+                        <span id="contador-sacola" class="contador" style="display: none;">0</span>
+                    </a>
+                </div>
+                <a href="simularfrete.html" class="text-light">
+                    <i class="bi bi-truck" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de Produtos -->
+    <div class="container text-center mt-5">
+        <h3 class="pt-3" style="color:#fb51a6 ; text-align: start;" > Bases e Corretivos</h3>
+        <div class="row mt-4">
+
+            <!-- Produto 1 -->
+            <div class="col-md-4">
+                <div class="card h-100"> <!-- Garante que todas as caixas fiquem iguais -->
+                  <img src="img/imgS1/BaseFacialUna.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5> R$: 89,90 </h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Base Facial UNA Natura</h5>
+                    <p class="card-text">Cobertura média, indicado para pele mista e oleosa</p>
+                    <div class="mt-auto"> 
+                        <label> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(1)" style="background-color: #f881bd; border-color:white">Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Produto 2 -->
+            <div class="col-md-4">
+                <div class="card h-100"> 
+                  <img src="img/imgS1/Corretivo Born This Way Super Coverage.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5> R$: 150,00 </h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Corretivo Born This Way Super Coverage</h5>
+                    <p class="card-text">Cobertura alta  Efeito Matte</p>
+                    <div class="mt-auto"> 
+                        <label> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(2)" style="background-color: #f881bd; border-color:white">Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Produto 3 -->
+            <div class="col-md-4">
+                <div class="card h-100"> 
+                  <img src="img/imgS1/BaseFacialBTavares.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5> R$: 79,90 </h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Base Facial Bruna Tavares</h5>
+                    <p class="card-text">Perfeição, Hidratação e Durabilidade</p>
+                    <div class="mt-auto"> 
+                        <label> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(3)" style="background-color: #f881bd; border-color:white">Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            <!--Produto 4-->
+
+            <div class="col-md-4">
+                <div class="card h-100"> 
+                  <img src="img/imgS1/Base Hinode.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5> R$: 94,90 </h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Base Líquida Hyaluronic Hydra Hinode</h5>
+                    <p class="card-text">cobertura média, proteção UVA, UVB </p>
+                    <div class="mt-auto"> 
+                        <label> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(4)" style="background-color: #f881bd; border-color:white">Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Produto 5-->
+              
+              <div class="col-md-4">
+                <div class="card h-100"> 
+                  <img src="img/imgS1/Bourjois 30ml Healthy Mix.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5 id="preco-produto">R$: 89,90</h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Bourjois Healthy Mix Foundation Makeup Base </h5>
+                    <p class="card-text">Média · Líquido · Todos os tipos de pele · Antienvelhecimento</p>
+                    <div class="mt-auto"> 
+                        <label id="Quantidade"> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(5)" style="background-color: #f881bd; border-color:white">Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Produto 6-->
+
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <img src="img/imgS1/corretivoBrunaTavres.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5 id="preco-produto">R$: 89,90</h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Corretivo BT Bruna Tavares</h5>
+                    <p class="card-text">Cobertura de média a alta, longa duração</p>
+                    <div class="mt-auto"> 
+                        <label id="Quantidade"> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(6)" style="background-color: #f881bd; border-color:white">Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               <!--Produto 7-->
+
+               <div class="col-md-4">
+                <div class="card h-100"> 
+                  <img src="img/imgS1/corretivo makeBI.png" 
+                       class="card-img-top img-fluid w-100" 
+                       style="height: 200px; object-fit: contain;" 
+                       alt="Produto">
+                       <h5 id="preco-produto">R$: 89,90</h5>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Corretivo MakeBI </h5>
+                    <p class="card-text">Cobertura de alta cobertura e longa duração</p>
+                    <div class="mt-auto"> 
+                        <label id="Quantidade"> Quantidade:</label>
+                      <input type="number" class="form-control mb-2" value="1">
+                      <button class="btn btn-primary w-100" onclick="adicionarProduto(7)" class="btn btn-primary adicionar-sacola" 
+                      data-nome="Corretivo MakeBI" 
+                      data-preco="69,00" style="background-color: #f881bd; border-color:white" >Adicionar à Sacola</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <style>
+                /* Estilo para o contador da sacola */
+                .contador {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    background-color: palevioletred;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: bold;
+                    padding: 3px 6px;
+                    border-radius: 50%;
+                }
+                .icon-container {
+                    position: relative;
+                    display: inline-block;
+                }
+            </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
